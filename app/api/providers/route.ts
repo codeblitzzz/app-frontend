@@ -2,10 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(request: NextRequest) {
   try {
-    // Get query parameters from the request URL
-    const { searchParams } = new URL(request.url);
-    const page = searchParams.get('page') || '1';
-    const limit = searchParams.get('limit') || '20';
+    // Get query parameters from the request
+    const page = request.nextUrl.searchParams.get('page') || '1';
+    const limit = request.nextUrl.searchParams.get('limit') || '20';
     
     // Get backend URL from environment variable
     const backendUrl = process.env.BACKEND_URL || 'http://localhost:8000';

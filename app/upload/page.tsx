@@ -63,7 +63,7 @@ export default function UploadPage() {
         setProgress((prev) => Math.min(prev + 5, 90))
       }, 100)
 
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/process_csv`, {
+      const response = await fetch('/api/process_csv', {
         method: "POST",
         body: formData,
       })

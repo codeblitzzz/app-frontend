@@ -31,7 +31,7 @@ export function ProvidersByStateChart() {
     const fetchData = async () => {
       try {
         setLoading(true)
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/analytics/providers-by-state`)
+        const response = await fetch('/api/analytics/providers-by-state')
         
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`)

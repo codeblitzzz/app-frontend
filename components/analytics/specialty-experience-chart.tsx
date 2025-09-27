@@ -214,7 +214,7 @@ export function SpecialtyExperienceChart() {
     const fetchData = async () => {
       try {
         setLoading(true)
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/analytics/specialty-experience`)
+        const response = await fetch('/api/analytics/specialty-experience')
         
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`)

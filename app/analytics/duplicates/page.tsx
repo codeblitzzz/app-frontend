@@ -64,7 +64,7 @@ export default function DuplicatesPage() {
   const fetchDuplicates = async () => {
     try {
       setLoading(true)
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/duplicates`)
+      const response = await fetch('/api/duplicates')
       
       if (!response.ok) {
         throw new Error(`Failed to fetch duplicates: ${response.statusText}`)

@@ -42,7 +42,7 @@ export default function ProvidersPage() {
   const fetchProviders = async (page: number, limit: number) => {
     try {
       setLoading(true)
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/providers?page=${page}&limit=${limit}`)
+      const response = await fetch(`/api/providers?page=${page}&limit=${limit}`)
       
       if (!response.ok) {
         throw new Error(`Failed to fetch providers: ${response.statusText}`)
